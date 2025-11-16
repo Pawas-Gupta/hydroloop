@@ -360,24 +360,7 @@ export default function ChatbotPage() {
             <kbd className="ml-auto text-xs opacity-70 bg-white/20 px-2 py-1 rounded">⌘N</kbd>
           </button>
 
-          <div className="mt-6 space-y-2">
-            <button className="w-full flex items-center gap-3 px-4 py-2 text-sm text-slate-700 hover:bg-white/50 rounded-xl transition-colors">
-              <Globe className="w-4 h-4" />
-              Explore HydroLoop AI
-            </button>
-            <button className="w-full flex items-center gap-3 px-4 py-2 text-sm text-slate-700 hover:bg-white/50 rounded-xl transition-colors">
-              <BookOpen className="w-4 h-4" />
-              Rainwater Knowledge Base
-            </button>
-            <button className="w-full flex items-center gap-3 px-4 py-2 text-sm text-slate-700 hover:bg-white/50 rounded-xl transition-colors">
-              <Map className="w-4 h-4" />
-              Guided Roadmaps
-            </button>
-            <button className="w-full flex items-center gap-3 px-4 py-2 text-sm text-slate-700 hover:bg-white/50 rounded-xl transition-colors">
-              <MessageCircle className="w-4 h-4" />
-              Success Stories
-            </button>
-          </div>
+          
 
           {todayChats.length > 0 && (
             <div className="mt-8">
@@ -418,10 +401,7 @@ export default function ChatbotPage() {
           )}
 
           <div className="mt-auto pt-8">
-            <button className="w-full flex items-center gap-3 px-4 py-2 text-sm text-slate-700 hover:bg-white/50 rounded-xl transition-colors">
-              <Settings className="w-4 h-4" />
-              Settings
-            </button>
+            
             <div className="mt-4 flex items-center gap-3 px-4 py-3 bg-white/50 rounded-xl">
               <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-blue-500 rounded-full flex items-center justify-center">
                 <User className="w-4 h-4 text-white" />
@@ -439,13 +419,7 @@ export default function ChatbotPage() {
           {messages.length <= 1 ? (
             <div className="bg-white/70 backdrop-blur-xl rounded-3xl p-10 shadow-xl border border-white/50 hover:shadow-2xl transition-all duration-300">
               {/* Upgrade Banner */}
-              <div className="flex items-center justify-center mb-8">
-                <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-50 to-green-50 border border-blue-200 rounded-full px-4 py-2">
-                  <Droplet className="w-4 h-4 text-blue-500" />
-                  <span className="text-sm font-medium text-blue-600">Upgrade</span>
-                  <span className="text-sm text-slate-600">free plan to full access</span>
-                </div>
-              </div>
+              
 
               {/* Logo */}
               <div className="flex justify-center mb-6">
@@ -472,15 +446,6 @@ export default function ChatbotPage() {
                     className="w-full bg-white/70 border border-slate-200 rounded-2xl px-6 py-4 pr-48 text-slate-800 placeholder-slate-400 outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all"
                   />
                   <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-2">
-                    <button className="p-2 hover:bg-slate-100 rounded-lg transition-colors">
-                      <Paperclip className="w-4 h-4 text-slate-500" />
-                    </button>
-                    <button className="p-2 hover:bg-slate-100 rounded-lg transition-colors">
-                      <Image className="w-4 h-4 text-slate-500" />
-                    </button>
-                    <button className="p-2 hover:bg-slate-100 rounded-lg transition-colors">
-                      <Mic className="w-4 h-4 text-slate-500" />
-                    </button>
                     <button
                       onClick={send}
                       disabled={loading}
@@ -497,29 +462,14 @@ export default function ChatbotPage() {
 
                 {/* Explore Roadmaps Button */}
                 <div className="mt-3 flex items-center gap-2">
-                  <button className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-50 to-green-50 border border-blue-200 rounded-xl text-sm text-blue-600 hover:shadow-md transition-all">
+                  <a href="/roadmaps/agricultural-rural-harvesting" className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-50 to-green-50 border border-blue-200 rounded-xl text-sm text-blue-600 hover:shadow-md transition-all">
                     <Map className="w-4 h-4" />
                     Explore Roadmaps
-                  </button>
+                  </a>
                 </div>
 
                 {/* Theme Selector */}
-                <div className="mt-4 bg-gradient-to-r from-purple-50 to-blue-50 border border-purple-200 rounded-xl px-6 py-4 flex items-center justify-between">
-                  <span className="text-sm text-slate-700">Choose Interface Theme</span>
-                  <div className="flex items-center gap-2">
-                    {themes.map((theme) => (
-                      <button
-                        key={theme.color}
-                        onClick={() => setSelectedTheme(theme.color)}
-                        className={`w-8 h-8 rounded-full border-2 transition-all ${
-                          selectedTheme === theme.color ? 'border-white shadow-lg scale-110' : 'border-transparent'
-                        }`}
-                        style={{ backgroundColor: theme.color }}
-                        title={theme.name}
-                      ></button>
-                    ))}
-                  </div>
-                </div>
+                
               </div>
 
               {/* Feature Cards */}
@@ -606,15 +556,6 @@ export default function ChatbotPage() {
                   className="w-full bg-white/70 border border-slate-200 rounded-2xl px-6 py-4 pr-48 text-slate-800 placeholder-slate-400 outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all"
                 />
                 <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-2">
-                  <button className="p-2 hover:bg-slate-100 rounded-lg transition-colors">
-                    <Paperclip className="w-4 h-4 text-slate-500" />
-                  </button>
-                  <button className="p-2 hover:bg-slate-100 rounded-lg transition-colors">
-                    <Image className="w-4 h-4 text-slate-500" />
-                  </button>
-                  <button className="p-2 hover:bg-slate-100 rounded-lg transition-colors">
-                    <Mic className="w-4 h-4 text-slate-500" />
-                  </button>
                   <button
                     onClick={send}
                     disabled={loading}

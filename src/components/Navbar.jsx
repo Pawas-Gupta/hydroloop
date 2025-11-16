@@ -48,7 +48,7 @@ const Navbar = () => {
                 className='rounded-full'
               />
             </div>
-            <span className="text-xl font-bold">HyroLoop</span>
+            <span className="text-xl font-bold">HydroLoop</span>
           </Link>
         </div>
 

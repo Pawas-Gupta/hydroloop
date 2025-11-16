@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { MapPin, Layers, Circle, Waves, Trash2, Users } from 'lucide-react';
-
+import Link from 'next/link';
 export default function RoadsInfrastructureRoadmap() {
   const steps = [
     {
@@ -51,7 +51,7 @@ export default function RoadsInfrastructureRoadmap() {
   return (
     <div className="min-h-screen relative overflow-hidden">
       {/* Background Image */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: "url('/image/Roads&PublicInfrastructure.png')",
@@ -63,6 +63,20 @@ export default function RoadsInfrastructureRoadmap() {
 
       {/* Content */}
       <div className="relative z-10 py-20 px-4">
+        <div className="flex items-center">
+          <Link href="/" className="flex items-center space-x-2">
+            <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+              <img
+                src="/image/logo.png"
+                alt="HydroLoop Logo"
+                width={55}
+                height={55}
+                className='rounded-full'
+              />
+            </div>
+            <span className="text-xl font-bold">HydroLoop</span>
+          </Link>
+        </div>
         {/* Header */}
         <div className="max-w-7xl mx-auto mb-16">
           <div className="text-center mb-4">
@@ -110,8 +124,8 @@ export default function RoadsInfrastructureRoadmap() {
               <div
                 key={step.id}
                 className="absolute group cursor-pointer"
-                style={{ 
-                  top: step.position.top, 
+                style={{
+                  top: step.position.top,
                   left: step.position.left,
                   transform: 'translate(-50%, -50%)',
                   zIndex: 10
@@ -122,7 +136,7 @@ export default function RoadsInfrastructureRoadmap() {
                   <div className="w-20 h-20 bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 rounded-full flex items-center justify-center shadow-2xl shadow-blue-500/60 transform transition-all duration-300 group-hover:scale-110 group-hover:shadow-blue-500/80">
                     <Icon className="w-10 h-10 text-white" strokeWidth={2.5} />
                   </div>
-                  
+
                   {/* Step Number Badge */}
                   <div className="absolute -top-2 -right-2 w-9 h-9 bg-white rounded-full flex items-center justify-center text-blue-600 font-bold text-base shadow-xl">
                     {step.id}
@@ -130,18 +144,16 @@ export default function RoadsInfrastructureRoadmap() {
                 </div>
 
                 {/* Info Card - Appears on Hover */}
-                <div className={`absolute top-1/2 -translate-y-1/2 ${
-                  index % 2 === 0 ? 'left-full ml-8' : 'right-full mr-8'
-                } w-80 bg-slate-900/95 backdrop-blur-md rounded-xl p-5 shadow-2xl border-2 border-blue-500/40 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none`}>
+                <div className={`absolute top-1/2 -translate-y-1/2 ${index % 2 === 0 ? 'left-full ml-8' : 'right-full mr-8'
+                  } w-80 bg-slate-900/95 backdrop-blur-md rounded-xl p-5 shadow-2xl border-2 border-blue-500/40 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none`}>
                   <h3 className="text-white font-bold text-xl mb-3">{step.title}</h3>
                   <p className="text-blue-200 text-sm leading-relaxed">{step.description}</p>
-                  
+
                   {/* Arrow Pointer */}
-                  <div className={`absolute top-1/2 -translate-y-1/2 ${
-                    index % 2 === 0 
+                  <div className={`absolute top-1/2 -translate-y-1/2 ${index % 2 === 0
                       ? 'left-0 -ml-3 border-t-[12px] border-b-[12px] border-r-[12px] border-t-transparent border-b-transparent border-r-slate-900/95'
                       : 'right-0 -mr-3 border-t-[12px] border-b-[12px] border-l-[12px] border-t-transparent border-b-transparent border-l-slate-900/95'
-                  }`}></div>
+                    }`}></div>
                 </div>
               </div>
             );
@@ -158,7 +170,7 @@ export default function RoadsInfrastructureRoadmap() {
                 {index < steps.length - 1 && (
                   <div className="absolute left-12 top-24 w-1 h-16 bg-gradient-to-b from-blue-500 to-blue-600 opacity-60"></div>
                 )}
-                
+
                 <div className="flex items-start space-x-6 bg-slate-900/90 backdrop-blur-md rounded-xl p-6 border-2 border-blue-500/30 shadow-2xl">
                   <div className="relative flex-shrink-0">
                     <div className="w-20 h-20 bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 rounded-full flex items-center justify-center shadow-xl shadow-blue-500/50 border-4 border-blue-400/30">
