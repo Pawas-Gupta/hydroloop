@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Building2, Workflow, Droplet, Database, Filter, Recycle } from 'lucide-react';
-
+import Link from 'next/link';
 export default function CommercialRoadmap() {
   const steps = [
     {
@@ -63,6 +63,20 @@ export default function CommercialRoadmap() {
 
       {/* Content */}
       <div className="relative z-10 py-20 px-4">
+      <div className="flex items-center">
+              <Link href="/" className="flex items-center space-x-2">
+                <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                  <img
+                    src="/image/logo.png"
+                    alt="HydroLoop Logo"
+                    width={55}
+                    height={55}
+                    className='rounded-full'
+                  />
+                </div>
+                <span className="text-xl font-bold">HydroLoop</span>
+              </Link>
+            </div>
         {/* Header */}
         <div className="max-w-7xl mx-auto mb-16">
           <div className="text-center mb-4">
